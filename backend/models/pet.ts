@@ -134,5 +134,12 @@ export const Pet = {
     getAll: (): Pet[] => {
         return data;
     },
-
+    getFromType: (type: PetType): Pet[] => {
+        return data.filter(item => item.type === type);
+    },
+    getFromName: (name: string): Pet[] => {
+        return data.filter(item => 
+            item.name.toLowerCase().indexOf(name.toLowerCase()) > -1
+        );
+    }
 };
